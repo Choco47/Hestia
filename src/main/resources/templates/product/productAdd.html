@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" 
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="_layout">
+<head>
+<title>product add</title>
+</head>
+<body>
+<div layout:fragment="content">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Product List</h2>
+          <ol>
+            <li><a href="/index">Home</a></li>
+            <li>Product Management</li>
+          </ol>
+        </div>
+
+      </div>
+    </section>
+    <!-- End Breadcrumbs -->
+
+
+    <section class="inner-page">
+      <div class="container">
+    
+        
+        <!-- table start -->
+         <form class="form-horizontal" th:action="@{/product}" method="post">  
+              <div class="col-lg-10">
+                <section class="panel">
+                  <header class="panel-heading">
+                    <b>New Product</b>
+                  </header>
+                  <br>
+                  <div class="panel-body">
+                      
+                      
+
+                      
+                      <div class="form-group">
+                        <label class="control-label col-sm-4">Code</label>
+
+                        <div class="col-sm-5">
+                          <input name="code" type="text"  class="form-control">
+                        </div>
+                      </div>
+                      
+                      <div class="form-group">
+                        <label class="control-label col-sm-4">Price</label>
+
+                        <div class="col-sm-5">
+                          <input name="price" type="number"  class="form-control">
+                        </div>
+                      </div>
+                      
+                      
+                       <div class="form-group">
+                        <label class="control-label col-sm-4">Description</label>
+
+                        <div class="col-sm-5">
+                          <input name="description" type="text"  class="form-control">
+                        </div>
+                      </div>
+                      
+                       <div class="form-group">
+                        <label class="control-label col-sm-4">Brand</label>
+
+                        <div class="col-sm-5">
+                          <input name="brand" type="text"  class="form-control">
+                        </div>
+                      </div>
+                    
+
+                  </div>
+                </section>
+		                <section class="panel">
+		
+			                  <div class="panel-body">
+			                    <button type="submit" class="btn btn-success">Save</button>
+			                    <a href="/product" class="btn btn-warning">Exit</a>
+			                  </div>
+		                </section>
+              </div>
+			</form>
+        <!-- table end -->
+        
+      </div>
+    </section>
+
+</div>
+</body>
+</html>

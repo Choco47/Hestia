@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" 
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="_layout">
+<head>
+<title>Hestia</title>
+</head>
+<body>
+<div layout:fragment="content">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Aircon Service Management</h2>
+          <ol>
+            <li><a href="/index">Home</a></li>
+            <li>Aircon Service Management</li>
+          </ol>
+        </div>
+
+      </div>
+    </section>
+    <!-- End Breadcrumbs -->
+
+        <section class="inner-page">
+      <div class="container">
+        
+        
+        <div class="panel">
+                <a href="/aserviceAdd"  class="btn btn-primary">
+                   New Aircon Service
+                </a>
+              </div>
+        
+        <!-- table start -->
+          <div class="row">
+          <div class="col-lg-12">
+            <section class="panel">
+              <table class="table table-striped table-advance table-hover" >
+                <tbody>
+                  <tr>
+                    <th>ID</th>
+					<th>Aircon Service Name</th>
+					<th>Price</th>
+					<th>Description</th>
+					<th>Action</th>
+                  </tr>
+                  </tbody>
+                  <tbody>
+                  <tr th:each="aservice:${aservice}" >
+                  	<td th:text="${aservice.id}"></td>
+                    <td th:text="${aservice.sname}"></td>
+                    <td th:text="${aservice.price}"></td>
+                    <td  th:text="${aservice.description}"></td>
+                    <td>
+                    	<div class="btn-group">
+                    		
+                    		<a class="btn btn-success" 
+                    		th:href="@{'/aserviceEdit/'+${aservice.id}}">Edit</a>
+                    		<a class="btn btn-primary" 
+                    		th:href="@{'/aserviceDetail/'+${aservice.id}}">Detail</a>
+                    		<a class="btn btn-danger" 
+                    		onclick="return confirm('Are you sure you want to delete this record?')"
+                    		th:href="@{'/aservice/delete/'+${aservice.id}}">Delete</a>
+                    	</div>
+                    </td>
+                  </tr>  
+                  </tbody>
+                   </table>
+            </section>
+          </div>
+        </div>
+        <!-- table end -->
+        
+      </div>
+    </section>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" 
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="_layout">
+
+<body>
+<div layout:fragment="content">
+
+
+
+
+ <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Contact List</h2>
+          <ol>
+            <li><a href="/index">Home</a></li>
+            <li>Contacts Management</li>
+          </ol>
+        </div>
+
+      </div>
+    </section>
+    <!-- End Breadcrumbs -->
+
+
+    <section class="inner-page">
+      <div class="container">
+        <!-- Start -->
+        
+	<form class="form-horizontal"  method="put">  
+	              <div class="col-lg-10">
+	                <section class="panel">
+	                  <header class="panel-heading">
+	                   <b>Edit Contact Detail</b>
+	                  </header>
+	                  <div class="panel-body">
+	                      
+	                      
+	                      <div class="form-group">
+	                      <label class="control-label col-sm-4">ID</label>
+	                      <div class="col-sm-6">
+	                      <input name="id" class="form-control" th:value="${contact.id}" type="text" readonly>
+	                      </div>
+	                      </div>
+	                      
+	                      <div class="form-group">
+	                        <label class="control-label col-sm-4">Contact Name</label>
+	
+	                        <div class="col-sm-5">
+	                          <input name="name" type="text"  th:value="${contact.name}" class="form-control" readonly>
+	                        </div>
+	                      </div>
+	
+		                  <div class="form-group">
+	                        <label class="control-label col-sm-4">Emai;</label>
+	
+	                        <div class="col-sm-5">
+	                          <input name="email" type="email"  th:value="${contact.email}" class="form-control" readonly>
+	                        </div>
+	                      </div>
+	                      
+	                      <div class="form-group">
+	                        <label class="control-label col-sm-4">Subject</label>
+	
+	                        <div class="col-sm-5">
+	                          <input name="subject" type="text"  th:value="${contact.subject}" class="form-control" readonly>
+	                        </div>
+	                      </div>
+	                      
+	                      <div class="form-group">
+	                        <label class="control-label col-sm-4">Message</label>
+	
+	                        <div class="col-sm-5">
+	                          <input name="message" type="text"  th:value="${contact.message}" class="form-control" readonly>
+	                        </div>
+	                      </div>
+
+
+	                    
+	
+	                  </div>
+	                </section>
+			                <section class="panel">
+			
+				                  <div class="panel-body">
+				                    <button type="submit" disabled class="btn btn-success">Save</button>
+				                    <a href="/contact" class="btn btn-warning">Exit</a>
+				                  </div>
+			                </section>
+	              </div>
+				</form>
+       
+       
+       
+       <!-- End --> 
+      </div>
+    </section>
+
+</div>
+</body>
+</html>

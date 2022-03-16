@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" 
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="_layout">
+<head>
+<title>Hestia</title>
+</head>
+<body>
+<div layout:fragment="content">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Order Management</h2>
+          <ol>
+            <li><a href="/index">Home</a></li>
+            <li>Order Management</li>
+          </ol>
+        </div>
+
+      </div>
+    </section>
+    <!-- End Breadcrumbs -->
+
+
+    <section class="inner-page">
+      <div class="container">
+        
+        
+        <!-- table start -->
+         <form class="form-horizontal" th:action="@{/aorder}" method="post">  
+              <div class="col-lg-10">
+                <section class="panel">
+                  <header class="panel-heading">
+                    <b>New Order</b>
+                  </header>
+                  <br>
+                  <div class="panel-body">
+                      
+                      
+                      <div class="form-group">
+                        <label class="control-label col-sm-4">Customer Name</label>
+
+                        <div class="col-sm-5">
+                          <input name="fname" type="text"  class="form-control">
+                        </div>
+                      </div>
+                      
+                      <div class="form-group">
+                        <label class="control-label col-sm-4">mobile</label>
+
+                        <div class="col-sm-5">
+                          <input name="mobile" type="text"  class="form-control">
+                        </div>
+                      </div>
+                      
+                      <div class="form-group">
+                        <label class="control-label col-sm-4">Address</label>
+
+                        <div class="col-sm-5">
+                          <input name="address" type="text"  class="form-control">
+                        </div>
+                      </div>
+                      <br>
+                      
+                      <div class="col-sm-5">
+                      <select class="form-control" id="ddlAserviceAdd" name="aserviceid">
+                        <option> Select </option>
+                        <option th:each="aservice:${aservice}"
+                                th:value="${aservice.id}"
+                                th:text="${aservice.sname}">
+                        </option>
+                    </select>
+                    </div>
+
+                  </div>
+                </section>
+		                <section class="panel">
+		
+			                  <div class="panel-body">
+			                    <button type="submit" class="btn btn-success">Save</button>
+			                    <a href="/aservice" class="btn btn-warning">Exit</a>
+			                  </div>
+		                </section>
+              </div>
+			</form>
+        <!-- table end -->
+        
+      </div>
+    </section>
+
+</div>
+</body>
+</html>

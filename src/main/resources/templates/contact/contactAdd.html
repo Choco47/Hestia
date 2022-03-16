@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" 
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="_layout">
+<head>
+<title>contact add</title>
+</head>
+<body>
+<div layout:fragment="content">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Contact Management</h2>
+          <ol>
+            <li><a href="/index">Home</a></li>
+            <li>Contact Management</li>
+          </ol>
+        </div>
+
+      </div>
+    </section>
+    <!-- End Breadcrumbs -->
+
+
+    <section class="inner-page">
+      <div class="container">
+    
+        
+        <!-- table start -->
+         <form class="form-horizontal" th:action="@{/contact}" method="post">  
+              <div class="col-lg-10">
+                <section class="panel">
+                  <header class="panel-heading">
+                    <b>New Contact</b>
+                  </header>
+                  <br>
+                  <div class="panel-body">
+                      
+                      
+                      <div class="form-group">
+                        <label class="control-label col-sm-4">Name</label>
+
+                        <div class="col-sm-5">
+                          <input name="name" type="text"  class="form-control">
+                        </div>
+                      </div>
+                      
+                      <div class="form-group">
+                        <label class="control-label col-sm-4">Email</label>
+
+                        <div class="col-sm-5">
+                          <input name="email" type="text"  class="form-control">
+                        </div>
+                      </div>
+                      
+                      <div class="form-group">
+                        <label class="control-label col-sm-4">Subject</label>
+
+                        <div class="col-sm-5">
+                          <input name="subject" type="text"  class="form-control">
+                        </div>
+                      </div>
+                      
+                      
+                       <div class="form-group">
+                        <label class="control-label col-sm-4">Message</label>
+
+                        <div class="col-sm-5">
+                          <input name="message" type="text"  class="form-control">
+                        </div>
+                      </div>
+                    
+
+                  </div>
+                </section>
+		                <section class="panel">
+		
+			                  <div class="panel-body">
+			                    <button type="submit" class="btn btn-success">Save</button>
+			                    <a href="/contact" class="btn btn-warning">Exit</a>
+			                  </div>
+		                </section>
+              </div>
+			</form>
+        <!-- table end -->
+        
+      </div>
+    </section>
+
+</div>
+</body>
+</html>

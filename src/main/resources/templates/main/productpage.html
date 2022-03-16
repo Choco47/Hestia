@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" 
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="_layout">
+<head>
+<title>Hestia</title>
+</head>
+<body>
+<div layout:fragment="content">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Contact</h2>
+          <ol>
+            <li><a href="/index">Home</a></li>
+            <li>Contact Page</li>
+          </ol>
+        </div>
+
+      </div>
+    </section>
+    <!-- End Breadcrumbs -->
+
+
+    <section class="inner-page">
+      <div class="container">
+        
+        
+       <section id="portfolio" class="portfolio">
+      <div class="container">
+      
+      	<div class="section-title">
+          <h2>Product</h2>
+          <p>AirCon</p>
+        </div>
+        <div class="row portfolio-container">
+        
+		<div th:each="product:${product}">
+		<div class=¡¨row¡¨>
+          <div class="col-lg-4 col-md-6 portfolio-item" >
+            <div class="portfolio-wrap">
+              <figure>
+              <a th:href="@{'/assets/img/aircon/'+ ${product.id} +'.png'}">
+                <img th:src="@{'/assets/img/aircon/' + ${product.id} + '.png'}" class="img-fluid"  alt="">
+               </a> 
+               
+              </figure>
+
+              <div class="portfolio-info">
+                <h4 th:text="${product.code}"></h4>
+               <p>PRICE: <span th:text="${product.price}"></span></p> 
+                <p>BRAND: <span th:text="${product.brand}"></span></p>
+                <br>
+                <p>Description:</p>
+                <p th:text="${product.description}" >  </p>
+              </div>
+            </div>
+          </div>
+		</div>
+	</div>
+        </div>
+        
+        
+        </div>
+        
+       
+       </section>
+        
+      </div>
+    </section>
+
+</div>
+</body>
+</html>
