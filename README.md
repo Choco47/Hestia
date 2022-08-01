@@ -1,3 +1,1 @@
-# Hestia
-
-Spring Boot Project (School Work)
+# Hestia -Spring Boot Project (School Work)
